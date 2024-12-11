@@ -1,0 +1,188 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 900px;
+    margin: 0;
+    color: black; /* 反転して黒 */
+    background-color: black; /* 背景を黒 */
+}
+
+.container {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: white; /* 文字を白 */
+    background-color: black; /* 背景を黒 */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* 影をより強調 */
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    color: white; /* 文字色を白 */
+}
+
+.button-container{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap; /* ボタンが複数行に並ぶように */
+    justify-content: center;
+    gap: 15px;
+}
+
+.unit-button, .subunit-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #f2f2f2;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.unit-button:hover:not(.active), .subunit-button:hover:not(.active){
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+}
+
+.level-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 3px;
+    background-color: #f2f2f2; /* 明るい背景に */
+    color: black; /* 文字を黒 */
+    transition: background-color 0.3s;
+}
+
+.level-button:hover {
+    background-color: #b5b5b5; /* ホバー時に暗い色 */
+    color: white; /* ホバー時の文字色を白 */
+}
+
+/* 勇者のパラメータのスタイル */
+.hero-parameters {
+    margin: 30px 0;
+    color: white; /* 文字色を白 */
+}
+
+.hero-stats{ 
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hero-stats2 {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.hero-stats li {
+    font-size: 20px;
+    background-color: white; /* 背景色 */
+    color: black; /* 文字色 */
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+.hero-stats2 li {
+    font-size: 20px;
+    background-color: white; /* 背景色 */
+    color: black; /* 文字色 */
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+/* レーダーチャートのスタイル */
+.radar-chart-container {
+    margin: 40px 0;
+    color: white; /* タイトルなどの文字色を白 */
+    padding: 20px; /* レーダーチャート周囲の余白を追加 */
+    background-color: #F6F6F6; /* 薄いグレーの背景色 */
+    border-radius: 10px; /* 角を丸く */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 影を追加して立体感 */
+    display: inline-block; /* サイズに応じて中央に */
+}
+
+.radar-chart-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: white; /* 文字色を白 */
+}
+
+button.difficulty-button {
+    padding: 20px 40px;
+    font-size: 26px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #f2f2f2;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+button.difficulty-button:hover:not(.active) {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.difficulty-button.active,
+button.difficulty-button.active:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.chart-and-buttons-container {
+    display: flex; /* 横並びに配置 */
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    gap: 20px; /* レーダーチャートとボタンの間隔 */
+    margin: 20px 0; /* 上下の余白 */
+}
+
+.difficulty-buttons-container {
+    display: flex;
+    flex-direction: column; /* ボタンを縦に並べる */
+    gap: 10px; /* ボタン同士の間隔 */
+}
+
+/* 戻るボタンのスタイル */
+.back-button {
+    padding: 20px 40px;
+    font-size: 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #f2f2f2;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.back-button:hover:not(.active) {
+    background-color: #4CAF50;
+    color: white;
+    transform: scale(1.05);
+}
+
+.back-button.active,
+.back-button.active:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+

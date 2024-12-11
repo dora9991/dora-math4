@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Battle Game</title>
+  <link rel="stylesheet" href="styles2.css">
+  <link rel="icon" href="data:," />
+  <style>
+      .container {
+          display: flex;
+          justify-content: space-around;
+          margin: 20px;
+      }
+      .log {
+          max-height: 250px;
+          overflow-y: auto;
+          border: 1px solid #ccc;
+          padding: 10px;
+      }
+      .party, .enemy {
+          display: flex;
+          align-items: center;
+      }
+      .party p {
+          margin: 0 10px;
+      }
+      .result {
+          margin-top: 20px;
+          text-align: center;
+      }
+      #restartButton, #returnButton {
+          display: none;
+          margin: 10px;
+          padding: 10px 20px;
+          font-size: 16px;
+      }
+  </style>
+  <script type="text/javascript">
+    window.MathJax = {
+      loader: { load: ['input/tex', 'output/chtml'] },
+      tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+    };
+  </script>
+  <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="wrapper">
+      <div class="screen" id="screen"></div>
+      <div class="game" id="game">
+          <h1>数学バトル</h1>
+          <div class="game-screen">
+              <div class="container">
+                  <div class="party">
+                      <p>勇者</p>
+                      <p id="heroHP"></p>
+                      <p id="heroAbility">分野: </p>
+                  </div>
+                  <div class="enemy">
+                      <p id="monsterName"></p>
+                      <p id="monsterHP"></p>
+                      <p id="monsterAbility"></p>
+                  </div>                
+              </div>
+              <div>
+                  <img id="monsterImage" class="monsterImage" src="" alt="Monster">
+              </div>
+          </div>
+          <div class="log">
+              <div id="battleLog"></div>
+              <div id="answers" style="display: flex; justify-content: space-around;">
+              <button>
+                <canvas id="graphOption0" width="60" height="100"></canvas>
+            </button>
+            <button>
+                <canvas id="graphOption1" width="60" height="100"></canvas>
+            </button><br>
+            <button>
+                <canvas id="graphOption2" width="60" height="100"></canvas>
+            </button>
+            <button>
+                <canvas id="graphOption3" width="60" height="100"></canvas>
+            </button>
+            </div>
+          </div>
+          <div class="result">
+              <p id="accuracy"></p>
+              <button id="returnButton">選択画面に戻る</button>
+          </div>
+      </div>
+      <audio id="battleBGM" src="battle_bgm.mp3" loop></audio>
+      <audio id="endBGM" src="end_bgm.mp3" loop></audio>
+      <audio id="correctSound" src="sounds/correct-sound.mp3"></audio>
+      <audio id="incorrectSound" src="sounds/incorrect-sound.mp3"></audio>
+      <script src="sentou.js" defer></script>
+  </div>
+</body>
+</html>

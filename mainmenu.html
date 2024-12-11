@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問題選択画面</title>
+    <link rel="stylesheet" href="mainmenu.css">
+    <!-- Chart.jsの読み込み（バージョン3.7.0を指定） -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Math Quest</h1>
+
+        <!-- 勇者のパラメータ表示 -->
+        <div class="hero-parameters">
+            <h2>勇者のステータス</h2>
+            <ul class="hero-stats">
+                <li>レベル: <span id="heroLevel">1</span></li>
+                <li>ライフ: <span id="heroHP">200</span></li>
+                <li id="averageAccuracy">平均正答率: 0</li>
+            </ul>
+            <div class="hero-stats2">
+            <li>レベルアップに必要な経験値: <span id="experienceRemaining">40</span></li>
+            </div>
+        </div>
+
+        <!-- レーダーチャートと難易度選択ボタン -->
+        <div class="chart-and-buttons-container">
+            <!-- レーダーチャート表示 -->
+            <div class="radar-chart-container">
+                <canvas id="radarChart" width="400" height="400"></canvas>
+            </div>
+        
+            <!-- 難易度選択ボタン -->
+            <div class="difficulty-buttons-container">
+                <button class="difficulty-button" data-difficulty="beginner">初級</button>
+                <button class="difficulty-button" data-difficulty="intermediate">中級</button>
+                <button class="difficulty-button" data-difficulty="advanced">上級</button>
+            </div>
+        </div>
+
+        <!-- 単元ボタン -->
+        <div class="button-container" id="unitButtons">
+            <button class="unit-button" data-unit="式の展開・因数分解">式の展開・因数分解</button>
+            <button class="unit-button" data-unit="平方根">平方根</button>
+            <button class="unit-button" data-unit="2次方程式">2次方程式</button>
+            <button class="unit-button" data-unit="関数y=ax^2">関数 y = ax²</button>
+            <!-- <button class="unit-button" data-unit="図形と相似">図形と相似</button>
+            <button class="unit-button" data-unit="円の性質">円の性質</button>
+            <button class="unit-button" data-unit="三平方の定理">三平方の定理</button>
+            <button class="unit-button" data-unit="標本調査">標本調査</button> -->
+        </div>
+
+        <!-- 小単元ボタン -->
+        <div class="button-container" id="subunitButtons" style="display: none;"></div>
+
+        <!-- 戻るボタン用のコンテナ -->
+        <div class="button-container" id="backButtonDiv" style="display: none;"></div>
+    </div>
+
+
+    <!-- BGM -->
+    <audio id="indexBGM" src="index_bgm.mp3" loop></audio>
+
+    <!-- スクリプト -->
+    <script src="mainmenu.js" defer></script>
+</body>
+</html>
